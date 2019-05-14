@@ -2,14 +2,9 @@ package TLL;
 
 import java.util.ArrayList;
 
-public class Learner {
-    Person person;
+public class Learner extends Person {
 
     ArrayList listOfSubjects = new ArrayList();
-
-    public Learner(Person person) {
-        this.person = person;
-    }
 
     public String studentSubjectSelection(String subject)  {
        try{
@@ -23,8 +18,6 @@ public class Learner {
     public ArrayList subjectOfStudent() {
         return listOfSubjects;
     }
-
-
 }
 
 

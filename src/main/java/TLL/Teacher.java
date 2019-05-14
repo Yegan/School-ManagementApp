@@ -2,13 +2,10 @@ package TLL;
 
 import java.util.ArrayList;
 
-public class Teacher {
-    Person person;
+public class Teacher extends Person {
     ArrayList qualifiedSubjects = new ArrayList();
 
-    public Teacher(Person person){
-        this.person = person;
-    }
+
 
     public void setQualifiedSubjects(String subjects){
     try{
