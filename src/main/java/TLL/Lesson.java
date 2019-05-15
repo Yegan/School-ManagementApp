@@ -2,7 +2,7 @@ package TLL;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 public class Lesson {
     private final Subjects lessonSubject;
@@ -19,8 +19,11 @@ public class Lesson {
 
     public void attend(Learner learner){
         try{
-            if(learner.subject(learner.listOfSubjects).equals(lessonSubject)){
+            int learnsSubjects = learner.subjectOfStudent().size();
+            if(learnsSubjects >= 3){
+                if(learner.subject(learner.listOfSubjects).equals(lessonSubject)){
                     studentsAttendingLesson.add(learner.getFirstName());
+                }
             }
 
         }catch(Exception ex){

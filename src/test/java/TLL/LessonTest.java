@@ -3,7 +3,6 @@ package TLL;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -22,10 +21,15 @@ public class LessonTest {
         learner.setLastName("Ross");
         learner.setEmail("richard@example.com");
         learner.studentSubjectSelection(Subjects.Maths);
+        learner.studentSubjectSelection(Subjects.English);
+        learner.studentSubjectSelection(Subjects.Accounting);
 
         Learner learner1 = new Learner();
         learner1.setFirstName("Andre");
         learner1.studentSubjectSelection(Subjects.Maths);
+        learner1.studentSubjectSelection(Subjects.English);
+        learner1.studentSubjectSelection(Subjects.Accounting);
+
 
         lesson.attend(learner);
         lesson.attend(learner1);

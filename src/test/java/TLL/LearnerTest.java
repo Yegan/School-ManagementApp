@@ -18,9 +18,11 @@ public class LearnerTest {
         learner.setLastName(surname);
         learner.studentSubjectSelection(Maths);
         learner.studentSubjectSelection(Subjects.English);
+        learner.studentSubjectSelection(Subjects.Accounting);
         Enum maths = Maths;
         assertEquals(maths, learner.subject(learner.listOfSubjects));
-        assertEquals("[Maths, English]",learner.subjectOfStudent().toString());
+        assertEquals("[Maths, English, Accounting]",learner.subjectOfStudent().toString());
+        assertEquals(3, learner.listOfSubjects.size());
     }
 
 //    @Test
