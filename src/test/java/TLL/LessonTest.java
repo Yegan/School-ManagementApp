@@ -2,6 +2,7 @@ package TLL;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,8 +13,8 @@ public class LessonTest {
         Teacher teacher = new Teacher();
         Lesson lesson = new Lesson(teacher, Subjects.Maths);
         teacher.setFirstName("Yegan");
-        teacher.setQualifiedSubjects("Maths");
-        teacher.setQualifiedSubjects("English");
+        teacher.setQualifiedSubjects(Subjects.Maths);
+        teacher.setQualifiedSubjects(Subjects.English);
 
         Learner learner = new Learner();
         learner.setFirstName("Richard");
@@ -27,7 +28,13 @@ public class LessonTest {
 
         lesson.attend(learner);
         lesson.attend(learner1);
-        assertEquals(Arrays.asList("Richard", "Andre"), lesson.studentsOfLesson());
+        lesson.teacherRegistration(teacher);
 
+        Enum maths = Subjects.Maths;
+        Enum english = Subjects.English;
+
+        assertEquals(Arrays.asList("Richard", "Andre"), lesson.studentsOfLesson());
+        assertEquals(Arrays.asList(maths, english),teacher.getQualifiedSubjects() );
+        assertEquals("Lesson cancelled", lesson.startLesson(lesson.studentsAttendingLesson));
     }
 }

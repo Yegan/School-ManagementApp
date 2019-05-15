@@ -1,7 +1,6 @@
 package TLL;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Lesson {
     private final Subjects lessonSubject;
@@ -24,20 +23,25 @@ public class Lesson {
         ex.printStackTrace();
         }
     }
-//    public void teacherRegistration(Subjects subjects){
-//        try{
-//            String name = teacher.getFirstName();
-//            String qualifcation = teacher.getQualifiedSubjects().toString();
-//
-//            if(learner.subject(learner.listOfSubjects).equals(qualifcation)){
-//                lessonTeacher.add(qualifcation);
-//            };
-//        }catch (Exception ex){
-//            ex.printStackTrace();
-//        }
-//    }
+    public void teacherRegistration(Teacher teacher){
+        try{
+
+            if(teacher.subject(teacher.qualifiedSubjects).equals(lessonSubject)){
+                lessonTeacher.add(teacher.getFirstName());
+            };
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
     public ArrayList studentsOfLesson(){
         return studentsAttendingLesson;
+    }
+
+    public String startLesson(ArrayList studentsAttendingLesson){
+        if(studentsAttendingLesson.size()< 5){
+            return "Lesson cancelled";
+        }
+        return "Let's begin todays Lesson";
     }
 
     }
