@@ -1,16 +1,20 @@
 package TLL;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Lesson {
     private final Subjects lessonSubject;
     ArrayList studentsAttendingLesson = new ArrayList();
     ArrayList lessonTeacher = new ArrayList();
     Teacher teacher;
+    LocalDateTime now = LocalDateTime.now();
 
-    public Lesson(Teacher teacher, Subjects lessonSubject){
+    public Lesson(Teacher teacher, Subjects lessonSubject, LocalDateTime now){
         this.teacher = teacher;
         this.lessonSubject = lessonSubject;
+        this.now = now;
     }
 
     public void attend(Learner learner){

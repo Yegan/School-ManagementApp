@@ -2,6 +2,7 @@ package TLL;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -11,7 +12,7 @@ public class LessonTest {
     @Test
     public void lesson1Test(){
         Teacher teacher = new Teacher();
-        Lesson lesson = new Lesson(teacher, Subjects.Maths);
+        Lesson lesson = new Lesson(teacher, Subjects.Maths, LocalDateTime.now());
         teacher.setFirstName("Yegan");
         teacher.setQualifiedSubjects(Subjects.Maths);
         teacher.setQualifiedSubjects(Subjects.English);
