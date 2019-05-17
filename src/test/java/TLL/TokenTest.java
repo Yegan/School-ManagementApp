@@ -57,7 +57,9 @@ public class TokenTest {
 
         lesson.teacherRegistration(teacher);
         tokens.getStudentLesson(lesson);
+        tokens.getTeacherLesson(lesson);
 
+        assertEquals("{Yegan=5}", tokens.teacherMap().toString());
         assertEquals("{Alice=3, Richard=3, Busisile=3, Andre=3, Paul=3}",tokens.studentsTokenTotalMap().toString());
     }
 

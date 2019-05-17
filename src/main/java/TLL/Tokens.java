@@ -1,6 +1,5 @@
 package TLL;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -19,11 +18,25 @@ public class Tokens {
         }catch (Exception ex){
             ex.printStackTrace();
         }
+    }
 
+    public void getTeacherLesson(Lesson lesson){
+        try{
+            ArrayList<String> teacher = lesson.lessonTeacher;
+            for (int i =0; i<teacher.size();i++) {
+                teacherTokenMap.put(teacher.get(i), 5);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 
     public HashMap studentsTokenTotalMap(){
         return studentTokenMap;
+    }
+
+    public HashMap teacherMap(){
+        return teacherTokenMap;
     }
 
 }
