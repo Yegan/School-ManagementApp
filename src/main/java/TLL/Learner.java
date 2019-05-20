@@ -35,8 +35,6 @@ public class Learner extends Person {
         return Subjects.Xhosa;
 
     }
-       // return "";
-
 
 }
 
